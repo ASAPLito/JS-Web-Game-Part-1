@@ -45,7 +45,12 @@ sword.addEventListener('dblclick', function(){
 */
 
 const newItem = (source, x, y) => {
-    newImage(source, x, y)
+    let dummyVariable = document.createElement('img')
+    dummyVariable.src = source
+    dummyVariable.style.position = 'fixed'
+    dummyVariable.style.left = x
+    dummyVariable.style.bottom = y
+    document.body.append(dummyVariable)
 
     dummyVariable.addEventListener('dblclick', function(){
         dummyVariable.remove()
